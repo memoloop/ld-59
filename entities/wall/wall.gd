@@ -19,3 +19,5 @@ func _on_level_activate_changed(active: bool):
 
 	if active:
 		tween.tween_property(self, "position:y", raised_position.y, 3.0)
+	else:
+		tween.tween_property(self, "position:y", start_position.y, 3.0)
