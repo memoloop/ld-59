@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dmttihixhrg5e"]
+
+[ext_resource type="Texture2D" uid="uid://bf7gq8vobgfq6" path="res://assets/images/signal_receiver.png" id="1_amtpe"]
+[ext_resource type="Script" uid="uid://dwrbolgqghaor" path="res://entities/signal_receiver/signal_receiver.gd" id="1_ofphx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_16h88"]
+size = Vector2(12, 12)
+
+[node name="SignalReceiver" type="Area2D" unique_id=1901268097]
+script = ExtResource("1_ofphx")
+metadata/_custom_type_script = "uid://7tpgq80y23hd"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1449476844]
+position = Vector2(0, -16)
+texture = ExtResource("1_amtpe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=300445192]
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_16h88")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

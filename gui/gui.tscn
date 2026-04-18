@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://deug3nr2iodo5"]
+
+[ext_resource type="Script" uid="uid://b0a5flaluokpr" path="res://gui/gui.gd" id="1_yw5qc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a4rkh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yw5qc"]
+bg_color = Color(0.22232416, 0.6509216, 0.82728356, 1)
+
+[node name="GUI" type="CanvasLayer" unique_id=834831199]
+script = ExtResource("1_yw5qc")
+
+[node name="StaminaBar" type="ProgressBar" parent="." unique_id=1725312523]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 88.0
+offset_bottom = 32.0
+theme_override_styles/background = SubResource("StyleBoxFlat_a4rkh")
+theme_override_styles/fill = SubResource("StyleBoxFlat_yw5qc")
+show_percentage = false
+
+[node name="StaminaLabel" type="Label" parent="." unique_id=1153074084]
+offset_left = 96.0
+offset_top = 11.0
+offset_right = 160.0
+offset_bottom = 34.0
+text = "Stamina"
