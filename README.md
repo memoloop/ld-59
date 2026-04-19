@@ -9,6 +9,8 @@ It's a simple puzzle platformer where you play as a robot navigating a maze with
 - SPACE - jump
 - E - interact
 - Q - propagate signal
+- F11 - toggle fullscreen
+- ESC - pause
 
 ## What did I use?
 - Game Engine: Godot 4.6.2

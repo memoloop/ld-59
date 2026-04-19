@@ -39,12 +39,12 @@ func _physics_process(delta):
 
 	# Handle the animation
 	var dir_string := Utils.get_direction_string(direction)
+
 	if "right" in dir_string:
 		anim_sprite.flip_h = false
 	elif "left" in dir_string:
 		anim_sprite.flip_h = true
-
-	if is_on_floor() and Input.is_action_pressed("emit_signal"):
+	elif is_on_floor() and direction.x == 0 and Input.is_action_pressed("emit_signal"):
 		var shape := get_shape()
 		stamina -= SIGNAL_SPEED * delta
 		if stamina >= SIGNAL_MIN_PROPAGATION:

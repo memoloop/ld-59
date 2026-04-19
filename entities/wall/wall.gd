@@ -1,16 +1,28 @@
 extends StaticBody2D
 class_name Wall
 
-@export var signal_propagator: SignalPropagator
-@export var height: float = 60.0
+enum Movement { HORIZONTAL, VERTICAL }
 
-var start_position: Vector2
-var raised_position: Vector2
+@export var signal_propagator: SignalPropagator
+@export var distance: float = 60.0
+
+var start_position_coord: float
+var raised_position_coord: float
+@export var movement: Movement = Movement.VERTICAL
+
+var property_to_change: NodePath 
 
 func _ready():
-	start_position = position
-	raised_position = start_position
-	raised_position.y -= height
+	match movement:
+		Movement.HORIZONTAL:
+			start_position_coord = global_position.x
+			property_to_change = "position:x"
+		Movement.VERTICAL:
+			start_position_coord = global_position.y
+			property_to_change = "position:y"
+
+	raised_position_coord = start_position_coord
+	raised_position_coord -= distance
 
 	signal_propagator.activate_changed.connect(_on_level_activate_changed)
 
@@ -18,6 +30,6 @@ func _on_level_activate_changed(active: bool):
 	var tween := create_tween()
 
 	if active:
-		tween.tween_property(self, "position:y", raised_position.y, 3.0)
+		tween.tween_property(self, property_to_change, raised_position_coord, 3.0)
 	else:
-		tween.tween_property(self, "position:y", start_position.y, 3.0)
+		tween.tween_property(self, property_to_change, start_position_coord, 3.0)

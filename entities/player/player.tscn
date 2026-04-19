@@ -114,7 +114,6 @@ position = Vector2(0, -13)
 sprite_frames = SubResource("SpriteFrames_8fjmc")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.3297477
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=180195530]
 position = Vector2(0, -5)
@@ -123,7 +122,6 @@ shape = SubResource("RectangleShape2D_sglur")
 [node name="SignalArea" type="Area2D" parent="." unique_id=1269266579]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SignalArea" unique_id=1817997077]
-visible = false
 position = Vector2(0, -9)
 shape = SubResource("CircleShape2D_symyc")
 
@@ -131,6 +129,5 @@ shape = SubResource("CircleShape2D_symyc")
 position = Vector2(0, -8)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea" unique_id=593361321]
-visible = false
 position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_abrql")
