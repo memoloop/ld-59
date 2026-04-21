@@ -4,6 +4,8 @@ class_name Game
 @export var gui: GUI
 @export var player: Player
 
+@onready var audio: AudioStreamPlayer = $AudioStreamPlayer
+
 func _ready():
 	player.stamina = Player.SIGNAL_MAX_PROPAGATION
 
@@ -17,13 +19,6 @@ func _on_player_stamina_changed(value: float, max_value: float):
 	gui.stamina_bar.value = value
 	gui.stamina_bar.max_value = max_value
 
-func _notification(what):
-	match what:
-		NOTIFICATION_APPLICATION_FOCUS_OUT:
-			get_tree().paused = true
-		NOTIFICATION_APPLICATION_FOCUS_IN:
-			get_tree().paused = false
-
 func _on_death_zone_game_over():
 	gui.game_over_label.show()
 	gui.resume_label.show()
@@ -32,3 +27,9 @@ func _on_death_zone_game_over():
 
 func _on_state_machine_paused(value: bool):
 	gui.pause_label.visible = value
+
+# ---------------------------
+# This is for the web build
+# ---------------------------
+func _on_audio_stream_player_finished():
+	audio.play()

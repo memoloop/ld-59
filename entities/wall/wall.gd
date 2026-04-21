@@ -10,7 +10,11 @@ var start_position_coord: float
 var raised_position_coord: float
 @export var movement: Movement = Movement.VERTICAL
 
-var property_to_change: NodePath 
+var property_to_change: NodePath
+
+var is_open: bool = false
+
+var tween: Tween
 
 func _ready():
 	match movement:
@@ -27,7 +31,9 @@ func _ready():
 	signal_propagator.activate_changed.connect(_on_level_activate_changed)
 
 func _on_level_activate_changed(active: bool):
-	var tween := create_tween()
+	if tween:
+		tween.kill()
+	tween = create_tween()
 
 	if active:
 		tween.tween_property(self, property_to_change, raised_position_coord, 3.0)

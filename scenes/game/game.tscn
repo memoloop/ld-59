@@ -69,12 +69,14 @@ signal_propagator = NodePath("../SignalReceiver")
 position = Vector2(1216, 208)
 
 [node name="TutorialLabel" type="Label" parent="ThirdSection" unique_id=456832931]
-offset_left = 920.0
-offset_top = 47.0
-offset_right = 1162.0
-offset_bottom = 70.0
+z_index = 10
+offset_left = 1026.0
+offset_top = 116.0
+offset_right = 1151.0
+offset_bottom = 175.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-text = "Press Q to propagate the signal"
+text = "Hold Q to propagate the signal"
+autowrap_mode = 3
 
 [node name="FourthSection" type="Node" parent="." unique_id=2031947102]
 
@@ -166,7 +168,7 @@ position = Vector2(-136, 0)
 shape = SubResource("RectangleShape2D_vtaks")
 
 [node name="Wall" parent="SeventhSection" unique_id=1533987149 node_paths=PackedStringArray("signal_propagator") instance=ExtResource("5_iywne")]
-position = Vector2(880, -319)
+position = Vector2(880, -320)
 signal_propagator = NodePath("../SignalReceiver")
 
 [node name="MovingPlatform" parent="SeventhSection" unique_id=1307200197 instance=ExtResource("8_gee14")]
@@ -209,3 +211,4 @@ autoplay = true
 parameters/looping = true
 
 [connection signal="stamina_changed" from="Player" to="." method="_on_player_stamina_changed"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

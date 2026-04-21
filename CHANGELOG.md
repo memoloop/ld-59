@@ -1,0 +1,9 @@
+# CHANGELOG
+
+## v0.1.1
+- Fixed the label "Press Q to propagate the signal" to "Hold Q to propagate the signal"
+- "_notification" method moved from "game.gd" to "state_machine.gd"
+    - when the window is unfocused/focused set get_tree().paused = true only when "state == PLAY"
+- in "wall.gd"
+    - changed node type from "StaticBody2D" to "AnimatableBody2D"
+    - set as member "tween" and modified "_on_level_active_changed" method

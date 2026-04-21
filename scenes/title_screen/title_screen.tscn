@@ -63,11 +63,11 @@ text = "Press E on the lever to start"
 [node name="VersionLabel" type="Label" parent="." unique_id=966308818]
 z_index = 10
 layout_mode = 0
-offset_left = 311.0
+offset_left = 273.0
 offset_top = 111.0
 offset_right = 480.0
 offset_bottom = 127.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-text = "v0.1 - LD59 Prototype"
+text = "v0.1.1 - LD59 Fixed version"
 
 [connection signal="activate_changed" from="Lever" to="." method="_on_lever_activate_changed"]

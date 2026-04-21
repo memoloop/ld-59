@@ -37,3 +37,12 @@ func _unhandled_input(event):
 			if window_mode == DisplayServer.WINDOW_MODE_FULLSCREEN 
 			else DisplayServer.WINDOW_MODE_FULLSCREEN
 		)
+
+func _notification(what):
+	if state != State.PLAY: return
+
+	match what:
+		NOTIFICATION_APPLICATION_FOCUS_OUT:
+			get_tree().paused = true
+		NOTIFICATION_APPLICATION_FOCUS_IN:
+			get_tree().paused = false

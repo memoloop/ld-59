@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ndby4"]
 size = Vector2(32, 64)
 
-[node name="Wall" type="StaticBody2D" unique_id=100388253]
+[node name="Wall" type="AnimatableBody2D" unique_id=26372109]
 z_index = -1
 script = ExtResource("1_2jwxi")
 
