@@ -1,0 +1,3 @@
+- Adding signal waves               X
+- Stuck in wall == die
+- Menu system

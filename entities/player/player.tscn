@@ -120,12 +120,13 @@ position = Vector2(0, -5)
 shape = SubResource("RectangleShape2D_sglur")
 
 [node name="SignalArea" type="Area2D" parent="." unique_id=1269266579]
+position = Vector2(0, -9)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SignalArea" unique_id=1817997077]
-position = Vector2(0, -9)
 shape = SubResource("CircleShape2D_symyc")
 
 [node name="InteractArea" type="Area2D" parent="." unique_id=1430563490]
+visible = false
 position = Vector2(0, -8)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea" unique_id=593361321]

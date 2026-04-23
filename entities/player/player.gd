@@ -17,6 +17,7 @@ var stamina: float:
 @onready var anim_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var collision_shape: CollisionShape2D = $SignalArea/CollisionShape2D
 @onready var interact_area: Area2D = $InteractArea
+@onready var signal_area: Area2D = $SignalArea
 
 var direction: Vector2
 
@@ -41,28 +42,41 @@ func _physics_process(delta):
 	var dir_string := Utils.get_direction_string(direction)
 
 	if "right" in dir_string:
-		anim_sprite.flip_h = false
+		anim_sprite.flip_h = false # Unflip the animation (the sprite is faced right)
 	elif "left" in dir_string:
-		anim_sprite.flip_h = true
+		anim_sprite.flip_h = true # Flip horizontally the animation
 	elif is_on_floor() and direction.x == 0 and Input.is_action_pressed("emit_signal"):
+		can_interact = true
 		var shape := get_shape()
-		stamina -= SIGNAL_SPEED * delta
+		stamina -= SIGNAL_SPEED * delta # Stamina decreases
 		if stamina >= SIGNAL_MIN_PROPAGATION:
-			anim_sprite.play("emit_signal")
-			shape.radius += SIGNAL_SPEED * delta
-			shape.radius = clamp(shape.radius, SIGNAL_MIN_PROPAGATION, SIGNAL_MAX_PROPAGATION)
+			anim_sprite.play("emit_signal") # Play "emit_signal"
+			shape.radius += SIGNAL_SPEED * delta # The shape radius increase by SIGNAL_SPEED * delta
+			shape.radius = clamp(shape.radius, SIGNAL_MIN_PROPAGATION, SIGNAL_MAX_PROPAGATION) # Max and min radius size
 		else:
-			anim_sprite.play("no_signal")
+			can_interact = false
+			anim_sprite.play("no_signal") # The stamina is over
 	else:
 		anim_sprite.play("idle")
 		get_shape().radius = SIGNAL_MIN_PROPAGATION
 		stamina += SIGNAL_SPEED * delta
 
-	move_and_slide()
+	move_and_slide() # Update the position of the player modifying the velocity property
+
+func _process(_delta):
+	queue_redraw() # Call the _draw() method every frame.
+
+func _draw():
+	if get_shape().radius > SIGNAL_MIN_PROPAGATION:
+		# Draw concentric circles that represents the propagation waves of the signal.
+		draw_circle(signal_area.position, get_shape().radius / 4, Color.LIGHT_BLUE, false) # Smallest and innermost
+		draw_circle(signal_area.position, get_shape().radius / 2, Color.DARK_BLUE, false) # Middle wave
+		draw_circle(signal_area.position, get_shape().radius, Color.LIGHT_BLUE, false) # Bigger and outermost
 
 func get_shape() -> CircleShape2D:
+	# Return the shape member of collision_shape
 	var shape := collision_shape.shape
 	if shape is CircleShape2D:
 		return shape
 	
-	return null
+	return null # You must add a CircleShape2d node or set collision.shape as CircleShape2D

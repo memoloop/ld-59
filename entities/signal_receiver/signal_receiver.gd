@@ -3,5 +3,5 @@ class_name SignalReceiver
 
 func _on_area_entered(area: Area2D):
 	var parent := area.get_parent()
-	if parent and parent is Player:
+	if parent and parent is Player and parent.can_interact:
 		active = not active
