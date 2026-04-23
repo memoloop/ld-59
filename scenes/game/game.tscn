@@ -226,6 +226,7 @@ next_level = ExtResource("11_5jirj")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=740767741]
 stream = ExtResource("11_kvpfn")
 volume_db = -10.0
+autoplay = true
 parameters/looping = true
 
 [connection signal="stamina_changed" from="Player" to="." method="_on_player_stamina_changed"]

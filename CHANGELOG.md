@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## v0.1.2.1
+- "AudioStreamPlayer.autoplay = true"
+
 ## v0.1.2
 - Added labels for tutorials
     - in "TitleScreen" added "Move with A - D" label
