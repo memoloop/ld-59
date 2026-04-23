@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## v0.1.2
+- Add labels for tutorials
+    - in "TitleScreen" added "Move with A - D" label
+    - in "Game" added "Press SPACE to jump" and "Beware the spikes!" labels
+
 ## v0.1.1
 - Fixed the label "Press Q to propagate the signal" to "Hold Q to propagate the signal"
 - "_notification" method moved from "game.gd" to "state_machine.gd"

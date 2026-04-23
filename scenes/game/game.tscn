@@ -59,6 +59,16 @@ position = Vector2(368, 125)
 rotation = 4.712389
 scale = Vector2(-1, 1)
 
+[node name="InfoLabel" type="Label" parent="SecondSection" unique_id=482590949]
+z_index = 10
+offset_left = 259.0
+offset_top = 50.0
+offset_right = 352.0
+offset_bottom = 104.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Press SPACE to jump"
+autowrap_mode = 3
+
 [node name="ThirdSection" type="Node" parent="." unique_id=642000528]
 
 [node name="Wall" parent="ThirdSection" unique_id=94069584 node_paths=PackedStringArray("signal_propagator") instance=ExtResource("5_iywne")]
@@ -176,6 +186,15 @@ position = Vector2(912, -446)
 distance = 100.0
 direction = Vector2(0, -1)
 
+[node name="InfoLabel" type="Label" parent="SeventhSection" unique_id=704104955]
+z_index = 10
+offset_left = 1142.0
+offset_top = -495.0
+offset_right = 1285.0
+offset_bottom = -479.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Beware the spikes!	"
+
 [node name="EighthSection" type="Node" parent="." unique_id=870545221]
 
 [node name="MovingPlatform" parent="EighthSection" unique_id=1267209961 instance=ExtResource("8_gee14")]
@@ -207,7 +226,6 @@ next_level = ExtResource("11_5jirj")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=740767741]
 stream = ExtResource("11_kvpfn")
 volume_db = -10.0
-autoplay = true
 parameters/looping = true
 
 [connection signal="stamina_changed" from="Player" to="." method="_on_player_stamina_changed"]
