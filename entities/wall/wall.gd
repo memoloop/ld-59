@@ -10,9 +10,9 @@ var start_position_coord: float
 var raised_position_coord: float
 @export var movement: Movement = Movement.VERTICAL
 
-var property_to_change: NodePath
+@onready var death_zone: DeathZone = $DeathZone
 
-var is_open: bool = false
+var property_to_change: NodePath
 
 var tween: Tween
 
@@ -35,7 +35,11 @@ func _on_level_activate_changed(active: bool):
 		tween.kill()
 	tween = create_tween()
 
-	if active:
+	if active: # Open the wall
+		death_zone.get_collision_shape().set_deferred("disabled", true)
 		tween.tween_property(self, property_to_change, raised_position_coord, 3.0)
-	else:
+	else: # Close the wall
 		tween.tween_property(self, property_to_change, start_position_coord, 3.0)
+		await tween.finished
+		death_zone.get_collision_shape().set_deferred("disabled", false)
+

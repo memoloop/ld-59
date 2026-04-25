@@ -2,9 +2,12 @@
 
 [ext_resource type="Script" uid="uid://l6pq2r6wnek7" path="res://entities/wall/wall.gd" id="1_2jwxi"]
 [ext_resource type="Texture2D" uid="uid://drpdad65dbdux" path="res://assets/images/wall.png" id="1_ndby4"]
+[ext_resource type="Script" uid="uid://ddex005pxcfs2" path="res://scripts/death_zone.gd" id="3_0n2nn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ndby4"]
 size = Vector2(32, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0xaov"]
 
 [node name="Wall" type="AnimatableBody2D" unique_id=26372109]
 z_index = -1
@@ -17,3 +20,11 @@ texture = ExtResource("1_ndby4")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1210070679]
 position = Vector2(0, -32)
 shape = SubResource("RectangleShape2D_ndby4")
+
+[node name="DeathZone" type="Area2D" parent="." unique_id=1755738554]
+script = ExtResource("3_0n2nn")
+metadata/_custom_type_script = "uid://ddex005pxcfs2"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone" unique_id=1270784991]
+shape = SubResource("RectangleShape2D_0xaov")
+disabled = true

@@ -13,4 +13,4 @@ func _on_lever_activate_changed(_value: bool):
 	get_tree().change_scene_to_file("res://scenes/game/game.tscn")
 
 func _ready():
-	version_label.text = "v" + ProjectSettings.get_setting("application/config/version")
+	version_label.text = "v" + Utils.get_version()

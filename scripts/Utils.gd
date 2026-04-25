@@ -32,3 +32,6 @@ static func get_children_from_type(parent: Node, type) -> Array:
 		get_children_from_type(child, type)
 
 	return temp_out
+
+static func get_version() -> String:
+	return ProjectSettings.get_setting("application/config/version")

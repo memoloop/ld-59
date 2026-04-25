@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v0.1.3
+- Added a "DeathZone" node to "Wall" scene, now when the player is stuck in a wall the game is over.
+- Added "get_version" method in "Utils.gd"
+- Added "Debug.gd"
+    - on "_ready" mute audio is the version is development
+
 ## v0.1.2.1
 - "AudioStreamPlayer.autoplay = true"
 
