@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://deug3nr2iodo5"]
 
-[ext_resource type="Script" uid="uid://b0a5flaluokpr" path="res://gui/gui.gd" id="1_yw5qc"]
+[ext_resource type="Script" uid="uid://b0a5flaluokpr" path="res://gui/gui_manager/gui.gd" id="1_yw5qc"]
+[ext_resource type="PackedScene" uid="uid://7raur46wcu4g" path="res://gui/menu/menu.tscn" id="2_ioifv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a4rkh"]
 
@@ -67,3 +68,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 32
 text = "PAUSE"
+
+[node name="Menu" parent="." unique_id=2064217305 instance=ExtResource("2_ioifv")]
+visible = false

@@ -5,6 +5,8 @@
 - Added "get_version" method in "Utils.gd"
 - Added "Debug.gd"
     - on "_ready" mute audio is the version is development
+- Added "Menu" for pause and "menu.gd"
+- Added "selection_container.gd"
 
 ## v0.1.2.1
 - "AudioStreamPlayer.autoplay = true"
