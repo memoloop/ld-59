@@ -1,4 +1,5 @@
 - Adding signal waves               X
 - Stuck in wall == die              X
 - Menu system
-    - Settings menu (fix bugs and set a cool design)
+    - Settings menu (fix bugs)      X
+    - Custom inputs

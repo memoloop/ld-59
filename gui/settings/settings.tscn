@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://wbj6sndgiymw"]
 
 [ext_resource type="Script" uid="uid://bdirocy7ye5f" path="res://scripts/selection_container.gd" id="1_cphfk"]
+[ext_resource type="Script" uid="uid://cygoen82vfayh" path="res://gui/settings/settings.gd" id="1_po07c"]
 [ext_resource type="Script" uid="uid://bsdhcnhfuc423" path="res://gui/settings/volume_button.gd" id="2_mq5kv"]
 
 [node name="Settings" type="PanelContainer" unique_id=1214500497]
@@ -16,11 +17,13 @@ offset_right = 56.0
 offset_bottom = 51.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_po07c")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=65979771]
 layout_mode = 2
-size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 5
 
 [node name="SelectionContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1329718302]
 layout_mode = 2
@@ -32,5 +35,10 @@ layout_mode = 2
 text = "Volume < >: value"
 script = ExtResource("2_mq5kv")
 
+[node name="CloseButton" type="Button" parent="MarginContainer/SelectionContainer" unique_id=2071680894]
+layout_mode = 2
+text = "Close"
+
 [connection signal="focus_entered" from="MarginContainer/SelectionContainer/VolumeButton" to="MarginContainer/SelectionContainer/VolumeButton" method="_on_focus_entered"]
 [connection signal="gui_input" from="MarginContainer/SelectionContainer/VolumeButton" to="MarginContainer/SelectionContainer/VolumeButton" method="_on_gui_input"]
+[connection signal="pressed" from="MarginContainer/SelectionContainer/CloseButton" to="." method="_on_close_button_pressed"]

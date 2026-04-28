@@ -7,6 +7,8 @@
     - on "_ready" mute audio is the version is development
 - Added "Menu" for pause and "menu.gd"
 - Added "selection_container.gd"
+- Added "Settings" scene and "settings.gd"
+    - Added "VolumeButton"
 
 ## v0.1.2.1
 - "AudioStreamPlayer.autoplay = true"

@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://vdr6dcdvfdy7" path="res://gui/menu/menu.gd" id="1_iots8"]
 [ext_resource type="Script" uid="uid://bdirocy7ye5f" path="res://scripts/selection_container.gd" id="2_0n48u"]
-[ext_resource type="PackedScene" uid="uid://wbj6sndgiymw" path="res://gui/settings/settings.tscn" id="3_jxhdi"]
 
 [node name="Menu" type="PanelContainer" unique_id=2064217305]
 process_mode = 2
@@ -42,10 +41,6 @@ text = "Settings"
 [node name="QuitButton" type="Button" parent="MarginContainer/SelectionContainer" unique_id=1084851183]
 layout_mode = 2
 text = "Quit"
-
-[node name="Settings" parent="." unique_id=1214500497 instance=ExtResource("3_jxhdi")]
-visible = false
-layout_mode = 2
 
 [connection signal="pressed" from="MarginContainer/SelectionContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="MarginContainer/SelectionContainer/SettingsButton" to="." method="_on_settings_button_pressed"]

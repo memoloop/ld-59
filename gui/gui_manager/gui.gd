@@ -9,3 +9,4 @@ class_name GUI
 
 @onready var pause_label: Label = $PauseLabel
 @onready var menu: Menu = $Menu
+@onready var settings: Settings = $Settings
