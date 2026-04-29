@@ -10,3 +10,17 @@ class_name GUI
 @onready var pause_label: Label = $PauseLabel
 @onready var menu: Menu = $Menu
 @onready var settings: Settings = $Settings
+@onready var input_mapper: InputMapper = $InputMapper
+
+func _ready() -> void:
+	StateMachine.paused.connect(_on_state_machine_paused)
+
+func _on_state_machine_paused(value: bool):
+	if value: # When pause is true
+		menu.show()
+		
+	else: # When pause is false
+		menu.hide()
+		settings.hide()
+		input_mapper.hide()
+	

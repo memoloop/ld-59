@@ -2,4 +2,5 @@
 - Stuck in wall == die              X
 - Menu system
     - Settings menu (fix bugs)      X
-    - Custom inputs
+    - Custom inputs                 X
+- Save settings

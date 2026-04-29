@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://b0a5flaluokpr" path="res://gui/gui_manager/gui.gd" id="1_yw5qc"]
 [ext_resource type="PackedScene" uid="uid://7raur46wcu4g" path="res://gui/menu/menu.tscn" id="2_ioifv"]
 [ext_resource type="PackedScene" uid="uid://wbj6sndgiymw" path="res://gui/settings/settings.tscn" id="3_bmpfl"]
+[ext_resource type="PackedScene" uid="uid://mn5uekqxoimx" path="res://gui/input_mapper/input_mapper.tscn" id="4_1iqdi"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a4rkh"]
 
@@ -76,4 +77,19 @@ gui = NodePath("..")
 
 [node name="Settings" parent="." unique_id=1214500497 node_paths=PackedStringArray("gui") instance=ExtResource("3_bmpfl")]
 visible = false
+gui = NodePath("..")
+
+[node name="InputMapper" parent="." unique_id=1751403971 node_paths=PackedStringArray("gui") instance=ExtResource("4_1iqdi")]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.0
+offset_top = -65.5
+offset_right = 68.0
+offset_bottom = 65.5
+grow_horizontal = 2
+grow_vertical = 2
 gui = NodePath("..")

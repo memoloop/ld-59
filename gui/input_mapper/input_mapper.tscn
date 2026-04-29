@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://mn5uekqxoimx"]
+
+[ext_resource type="Script" uid="uid://ccfggie1k83ju" path="res://gui/input_mapper/input_mapper.gd" id="1_4ri6t"]
+[ext_resource type="Script" uid="uid://bdirocy7ye5f" path="res://scripts/selection_container.gd" id="1_uh584"]
+[ext_resource type="Script" uid="uid://c41nl5ccgb3pb" path="res://gui/input_mapper/input_button.gd" id="2_07s2q"]
+
+[node name="InputMapper" type="PanelContainer" unique_id=1751403971]
+process_mode = 2
+offset_right = 136.0
+offset_bottom = 131.0
+script = ExtResource("1_4ri6t")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=616702607]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="SelectionContainer" type="VBoxContainer" parent="MarginContainer" unique_id=458215374]
+layout_mode = 2
+script = ExtResource("1_uh584")
+metadata/_custom_type_script = "uid://bdirocy7ye5f"
+
+[node name="UpInputButton" type="Button" parent="MarginContainer/SelectionContainer" unique_id=793919295]
+layout_mode = 2
+text = "Up:"
+alignment = 0
+script = ExtResource("2_07s2q")
+action_name = &"move_up"
+metadata/_custom_type_script = "uid://c41nl5ccgb3pb"
+
+[node name="DownInputButton" type="Button" parent="MarginContainer/SelectionContainer" unique_id=1758279353]
+layout_mode = 2
+text = "Down:"
+alignment = 0
+script = ExtResource("2_07s2q")
+action_name = &"move_down"
+metadata/_custom_type_script = "uid://c41nl5ccgb3pb"
+
+[node name="LeftInputButton" type="Button" parent="MarginContainer/SelectionContainer" unique_id=525778038]
+layout_mode = 2
+text = "Left:"
+alignment = 0
+script = ExtResource("2_07s2q")
+action_name = &"move_left"
+metadata/_custom_type_script = "uid://c41nl5ccgb3pb"
+
+[node name="RightInputButton" type="Button" parent="MarginContainer/SelectionContainer" unique_id=1459879855]
+layout_mode = 2
+text = "Right:"
+alignment = 0
+script = ExtResource("2_07s2q")
+action_name = &"move_right"
+metadata/_custom_type_script = "uid://c41nl5ccgb3pb"
+
+[node name="JumpInputButton" type="Button" parent="MarginContainer/SelectionContainer" unique_id=1701800521]
+layout_mode = 2
+text = "Jump:"
+alignment = 0
+script = ExtResource("2_07s2q")
+action_name = &"jump"
+metadata/_custom_type_script = "uid://c41nl5ccgb3pb"
+
+[node name="InteractInputButton" type="Button" parent="MarginContainer/SelectionContainer" unique_id=1275255094]
+layout_mode = 2
+text = "Interact:"
+alignment = 0
+script = ExtResource("2_07s2q")
+action_name = &"interact"
+metadata/_custom_type_script = "uid://c41nl5ccgb3pb"
+
+[node name="SignalInputButton" type="Button" parent="MarginContainer/SelectionContainer" unique_id=460063797]
+layout_mode = 2
+text = "Signal:"
+alignment = 0
+script = ExtResource("2_07s2q")
+action_name = &"emit_signal"
+metadata/_custom_type_script = "uid://c41nl5ccgb3pb"
+
+[node name="Control" type="Control" parent="MarginContainer/SelectionContainer" unique_id=498802684]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="CloseButton" type="Button" parent="MarginContainer/SelectionContainer" unique_id=2140281748]
+layout_mode = 2
+text = "Close"
+
+[connection signal="pressed" from="MarginContainer/SelectionContainer/CloseButton" to="." method="_on_close_button_pressed"]

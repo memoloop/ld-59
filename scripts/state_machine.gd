@@ -24,6 +24,12 @@ func _unhandled_input(event):
 				paused.emit(false)
 				state = State.PLAY
 
+			# Simulate the custom action with the godot ui action
+			if event.is_action_pressed("move_down"):
+				Utils.simulate_input_pressed("ui_down")
+			elif event.is_action_pressed("move_up"):
+				Utils.simulate_input_pressed("ui_up")
+
 		State.GAME_OVER:
 			if event.is_action_pressed("jump"):
 				get_tree().paused = false

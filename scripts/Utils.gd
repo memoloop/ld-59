@@ -35,3 +35,15 @@ static func get_children_from_type(parent: Node, type) -> Array:
 
 static func get_version() -> String:
 	return ProjectSettings.get_setting("application/config/version")
+
+static func get_separate_words_string(string: String) -> String:
+	var snake_case_string := string.to_snake_case()
+	var separate_words_string := snake_case_string.replace("_", " ")
+
+	return separate_words_string
+
+static func simulate_input_pressed(action: StringName):
+	var input_event_action := InputEventAction.new()
+	input_event_action.action = action
+	input_event_action.pressed = true
+	Input.parse_input_event(input_event_action)
