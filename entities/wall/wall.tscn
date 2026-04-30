@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://l6pq2r6wnek7" path="res://entities/wall/wall.gd" id="1_2jwxi"]
 [ext_resource type="Texture2D" uid="uid://drpdad65dbdux" path="res://assets/images/wall.png" id="1_ndby4"]
-[ext_resource type="Script" uid="uid://ddex005pxcfs2" path="res://scripts/death_zone.gd" id="3_0n2nn"]
+[ext_resource type="Script" uid="uid://ddex005pxcfs2" path="res://scripts/custom_nodes/death_zone.gd" id="3_0n2nn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ndby4"]
 size = Vector2(32, 64)

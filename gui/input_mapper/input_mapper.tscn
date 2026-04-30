@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://mn5uekqxoimx"]
 
 [ext_resource type="Script" uid="uid://ccfggie1k83ju" path="res://gui/input_mapper/input_mapper.gd" id="1_4ri6t"]
-[ext_resource type="Script" uid="uid://bdirocy7ye5f" path="res://scripts/selection_container.gd" id="1_uh584"]
+[ext_resource type="Script" uid="uid://bdirocy7ye5f" path="res://scripts/custom_nodes/selection_container.gd" id="1_uh584"]
 [ext_resource type="Script" uid="uid://c41nl5ccgb3pb" path="res://gui/input_mapper/input_button.gd" id="2_07s2q"]
 
 [node name="InputMapper" type="PanelContainer" unique_id=1751403971]

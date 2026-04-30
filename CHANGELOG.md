@@ -15,6 +15,9 @@
     - Added "InputButton"
 - Added "InputMapper"
     - Added "input_button.gd"
+- Added "save_manager.gd" to control inputs and later save other things
+- In "TitleScreen"
+    - The label show the current key to use
 
 ## v0.1.2.1
 - "AudioStreamPlayer.autoplay = true"

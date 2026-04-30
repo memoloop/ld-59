@@ -1,6 +1,7 @@
-- Adding signal waves               X
-- Stuck in wall == die              X
-- Menu system
-    - Settings menu (fix bugs)      X
-    - Custom inputs                 X
-- Save settings
+- Adding signal waves                                               X
+- Stuck in wall == die                                              X
+- Menu system                                                       X
+    - Settings menu (fix bugs)                                      X
+    - Custom inputs                                                 X
+- Save settings                                                     X
+    - Set all labels to render with the correct keys

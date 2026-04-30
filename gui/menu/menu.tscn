@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://7raur46wcu4g"]
 
 [ext_resource type="Script" uid="uid://vdr6dcdvfdy7" path="res://gui/menu/menu.gd" id="1_iots8"]
-[ext_resource type="Script" uid="uid://bdirocy7ye5f" path="res://scripts/selection_container.gd" id="2_0n48u"]
+[ext_resource type="Script" uid="uid://bdirocy7ye5f" path="res://scripts/custom_nodes/selection_container.gd" id="2_0n48u"]
 
 [node name="Menu" type="PanelContainer" unique_id=2064217305]
 process_mode = 2

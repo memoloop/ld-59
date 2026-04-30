@@ -41,6 +41,7 @@ func _unhandled_key_input(event: InputEvent) -> void:
 			listen_new_event = false
 			label_normal_state()
 			get_label().text = get_event().as_text()
+			SaveManager.set_input(action_name, get_event().as_text())
 
 func _on_pressed():
 	listen_new_event = true
