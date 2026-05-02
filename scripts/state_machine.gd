@@ -37,12 +37,7 @@ func _unhandled_input(event):
 				get_tree().reload_current_scene()
 	
 	if event.is_action_pressed("fullscreen") and not event.is_echo():
-		var window_mode := DisplayServer.window_get_mode()
-		DisplayServer.window_set_mode(
-			DisplayServer.WINDOW_MODE_WINDOWED 
-			if window_mode == DisplayServer.WINDOW_MODE_FULLSCREEN 
-			else DisplayServer.WINDOW_MODE_FULLSCREEN
-		)
+		Utils.toggle_fullscreen()
 
 func _notification(what):
 	if state != State.PLAY: return

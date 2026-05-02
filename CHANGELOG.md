@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v0.1.4
+- Added more animation to the player (assets/images/player.png)
+    - Separated the animation part from the propagation mechaninc "handle_animation"
+- In "Utils.gd" added "toggle_fullscreen" method
+- In "Settings" added "FullScreenButton"
+
 ## v0.1.3
 - Added a "DeathZone" node to "Wall" scene, now when the player is stuck in a wall the game is over.
 - In "Utils.gd"

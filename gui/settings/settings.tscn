@@ -40,6 +40,10 @@ script = ExtResource("2_mq5kv")
 layout_mode = 2
 text = "Input.."
 
+[node name="FullscreenButton" type="Button" parent="MarginContainer/SelectionContainer" unique_id=1772736192]
+layout_mode = 2
+text = "Fullscreen: value"
+
 [node name="Control" type="Control" parent="MarginContainer/SelectionContainer" unique_id=355651790]
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
@@ -49,4 +53,5 @@ layout_mode = 2
 text = "Close"
 
 [connection signal="pressed" from="MarginContainer/SelectionContainer/InputButton" to="." method="_on_input_button_pressed"]
+[connection signal="pressed" from="MarginContainer/SelectionContainer/FullscreenButton" to="." method="_on_fullscreen_button_pressed"]
 [connection signal="pressed" from="MarginContainer/SelectionContainer/CloseButton" to="." method="_on_close_button_pressed"]

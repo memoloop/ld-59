@@ -44,19 +44,30 @@ static func clean_action(action: StringName):
 	InputMap.add_action(action)
 
 static func set_input(action: StringName, event_label: String):
-	var file := FileAccess.open(SAVE_PATH, FileAccess.READ_WRITE)
+	var data = get_save_data()
+	
+	if not (data is Dictionary):
+		data = TEMPLATE.duplicate(true)
+
+	if not data.has("input"):
+		data["input"] = {}
+
+	data["input"][action] = event_label
+
+	var file := FileAccess.open(SAVE_PATH, FileAccess.WRITE)
 	if file:
-		var data = get_save_data()
-		if data is Dictionary:
-			data["input"][action] = event_label
-			file.store_string(JSON.stringify(data))
+		file.store_string(JSON.stringify(data))
 		file.close()
 
 static func set_volume(volume: float):
-	var file := FileAccess.open(SAVE_PATH, FileAccess.READ_WRITE)
+	var data = get_save_data()
+	
+	if not (data is Dictionary):
+		data = TEMPLATE.duplicate(true)
+
+	data["volume"] = volume
+
+	var file := FileAccess.open(SAVE_PATH, FileAccess.WRITE)
 	if file:
-		var data = get_save_data()
-		if data is Dictionary:
-			data["volume"] = volume
-			file.store_string(JSON.stringify(data))
+		file.store_string(JSON.stringify(data))
 		file.close()

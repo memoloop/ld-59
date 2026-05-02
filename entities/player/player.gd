@@ -23,6 +23,8 @@ var direction: Vector2
 
 var can_interact: bool = false
 
+var previous_vel: Vector2
+
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
@@ -38,14 +40,8 @@ func _physics_process(delta):
 	direction.x = Input.get_axis("move_left", "move_right")
 	velocity.x = direction.x * SPEED
 
-	# Handle the animation
-	var dir_string := Utils.get_direction_string(direction)
-
-	if "right" in dir_string:
-		anim_sprite.flip_h = false # Unflip the animation (the sprite is faced right)
-	elif "left" in dir_string:
-		anim_sprite.flip_h = true # Flip horizontally the animation
-	elif is_on_floor() and direction.x == 0 and Input.is_action_pressed("emit_signal"):
+	# Propagate the signal
+	if is_on_floor() and direction.x == 0 and Input.is_action_pressed("emit_signal"):
 		can_interact = true
 		var shape := get_shape()
 		stamina -= SIGNAL_SPEED * delta # Stamina decreases
@@ -55,11 +51,11 @@ func _physics_process(delta):
 			shape.radius = clamp(shape.radius, SIGNAL_MIN_PROPAGATION, SIGNAL_MAX_PROPAGATION) # Max and min radius size
 		else:
 			can_interact = false
-			anim_sprite.play("no_signal") # The stamina is over
 	else:
-		anim_sprite.play("idle")
 		get_shape().radius = SIGNAL_MIN_PROPAGATION
 		stamina += SIGNAL_SPEED * delta
+
+	handle_animation()
 
 	move_and_slide() # Update the position of the player modifying the velocity property
 
@@ -80,3 +76,24 @@ func get_shape() -> CircleShape2D:
 		return shape
 	
 	return null # You must add a CircleShape2d node or set collision.shape as CircleShape2D
+
+func handle_animation():
+	if velocity.y < 0:
+		anim_sprite.play("jump")
+	elif velocity.y > 0:
+		anim_sprite.play("fall")
+	elif previous_vel.y != velocity.y:
+		anim_sprite.play("bounch")
+	elif anim_sprite.animation == "bounch":
+		await anim_sprite.animation_finished
+		anim_sprite.play("idle")
+	else:
+		anim_sprite.play("idle")
+
+	# Flip
+	if velocity.x > 0:
+		anim_sprite.flip_h = false
+	elif velocity.x < 0:
+		anim_sprite.flip_h = true
+
+	previous_vel = velocity

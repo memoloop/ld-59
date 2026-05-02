@@ -47,3 +47,11 @@ static func simulate_input_pressed(action: StringName):
 	input_event_action.action = action
 	input_event_action.pressed = true
 	Input.parse_input_event(input_event_action)
+
+static func toggle_fullscreen():
+	var window_mode := DisplayServer.window_get_mode()
+	DisplayServer.window_set_mode(
+		DisplayServer.WINDOW_MODE_WINDOWED 
+		if window_mode == DisplayServer.WINDOW_MODE_FULLSCREEN 
+		else DisplayServer.WINDOW_MODE_FULLSCREEN
+	)

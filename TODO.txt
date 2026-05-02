@@ -1,7 +1,12 @@
 - Adding signal waves                                               X
 - Stuck in wall == die                                              X
 - Menu system                                                       X
-    - Settings menu (fix bugs)                                      X
+    - Settings menu                                                 X
     - Custom inputs                                                 X
 - Save settings                                                     X
     - Set all labels to render with the correct keys
+- Charger station
+- Walking animation for the player (more bouncing)
+- Visual clue to which receiver would open which door
+
+- Mobile build...????
