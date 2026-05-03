@@ -7,7 +7,8 @@ class_name Game
 @onready var audio: AudioStreamPlayer = $AudioStreamPlayer
 
 func _ready():
-	player.stamina = Player.SIGNAL_MAX_PROPAGATION
+	player.stamina = Player.SIGNAL_MAX_USE
+	player.health = Player.HEALTH_MAX
 
 	for death_zone in Utils.get_children_from_type(self, DeathZone):
 		if death_zone and death_zone is DeathZone:
@@ -19,7 +20,16 @@ func _on_player_stamina_changed(value: float, max_value: float):
 	gui.stamina_bar.value = value
 	gui.stamina_bar.max_value = max_value
 
+func _on_player_health_changed(value: float, max_value: float) -> void:
+	gui.health_bar.value = value
+	gui.health_bar.max_value = max_value
+	if value <= 0:
+		game_over()
+
 func _on_death_zone_game_over():
+	game_over()
+
+func game_over():
 	gui.game_over_label.show()
 	gui.resume_label.show()
 	StateMachine.state = StateMachine.State.GAME_OVER

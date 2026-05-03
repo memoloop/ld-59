@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://duh0qivkf53k4" path="res://entities/wall/wall.tscn" id="5_iywne"]
 [ext_resource type="PackedScene" uid="uid://dmttihixhrg5e" path="res://entities/signal_receiver/signal_receiver.tscn" id="7_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://cx5bhrwcueokt" path="res://entities/moving_platform/moving_platform.tscn" id="8_gee14"]
+[ext_resource type="PackedScene" uid="uid://cbj8b0fnikb83" path="res://entities/charger_station/charger_station.tscn" id="9_vaxfo"]
 [ext_resource type="PackedScene" uid="uid://cvuvw8yrd6o85" path="res://entities/door/door.tscn" id="10_dinhu"]
 [ext_resource type="Script" uid="uid://ddex005pxcfs2" path="res://scripts/custom_nodes/death_zone.gd" id="10_vtaks"]
 [ext_resource type="PackedScene" uid="uid://c83bly3kart5k" path="res://scenes/credit_screen/credit_screen.tscn" id="11_5jirj"]
@@ -103,6 +104,18 @@ position = Vector2(583, -135)
 speed = 60.0
 distance = 100.0
 direction = Vector2(1, 0)
+
+[node name="ChargerStation" parent="FourthSection" unique_id=266582513 instance=ExtResource("9_vaxfo")]
+position = Vector2(175, 0)
+
+[node name="InfoLabel" type="Label" parent="FourthSection" unique_id=274605242]
+offset_left = 331.0
+offset_top = -72.0
+offset_right = 430.0
+offset_bottom = -18.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Charger station to the left"
+autowrap_mode = 3
 
 [node name="FifthSection" type="Node" parent="." unique_id=1270242215]
 
@@ -217,6 +230,9 @@ rotation = 1.5707964
 signal_propagator = NodePath("../MovingPlatform/Lever")
 movement = 0
 
+[node name="ChargerStation" parent="EighthSection" unique_id=822950363 instance=ExtResource("9_vaxfo")]
+position = Vector2(771, -320)
+
 [node name="NinethSection" type="Node" parent="." unique_id=1365454569]
 
 [node name="Door" parent="NinethSection" unique_id=239838773 instance=ExtResource("10_dinhu")]
@@ -229,5 +245,6 @@ volume_db = -20.0
 autoplay = true
 parameters/looping = true
 
+[connection signal="health_changed" from="Player" to="." method="_on_player_health_changed"]
 [connection signal="stamina_changed" from="Player" to="." method="_on_player_stamina_changed"]
 [connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

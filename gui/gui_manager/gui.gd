@@ -4,6 +4,9 @@ class_name GUI
 @onready var stamina_bar: ProgressBar = $StaminaBar
 @onready var stamina_label: Label = $StaminaLabel
 
+@onready var health_bar: ProgressBar = $HealthBar
+@onready var health_label: Label = $HealthLabel
+
 @onready var game_over_label: Label = $GameOverLabel
 @onready var resume_label: Label = $ResumeLabel
 

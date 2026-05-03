@@ -146,11 +146,12 @@ collision_mask = 3
 script = ExtResource("1_abrql")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=229480174]
+process_mode = 3
 position = Vector2(0, -13)
 sprite_frames = SubResource("SpriteFrames_8fjmc")
-animation = &"bounch"
+animation = &"death"
 autoplay = "idle"
-frame_progress = 1.0
+frame_progress = 0.78992426
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=180195530]
 position = Vector2(0, -5)

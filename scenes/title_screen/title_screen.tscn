@@ -21,6 +21,7 @@ tile_set = ExtResource("1_fgkus")
 
 [node name="Player" parent="." unique_id=29424215 instance=ExtResource("2_sa3yf")]
 position = Vector2(71, 224)
+infinite_stamina = true
 
 [node name="Lever" parent="." unique_id=84606232 instance=ExtResource("3_s4lrb")]
 position = Vector2(255, 224)

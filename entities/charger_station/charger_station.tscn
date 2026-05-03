@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cbj8b0fnikb83"]
+
+[ext_resource type="Script" uid="uid://blt7uikx8us6p" path="res://entities/charger_station/charger_station.gd" id="1_31i75"]
+[ext_resource type="Texture2D" uid="uid://5edrykyliyv6" path="res://assets/images/charger_station.png" id="1_p2qbv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_31i75"]
+size = Vector2(20, 23)
+
+[node name="ChargerStation" type="Area2D" unique_id=266582513]
+script = ExtResource("1_31i75")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=630186866]
+position = Vector2(0, -16)
+texture = ExtResource("1_p2qbv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1927969666]
+position = Vector2(0, -11.5)
+shape = SubResource("RectangleShape2D_31i75")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
