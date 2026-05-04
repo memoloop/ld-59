@@ -17,13 +17,13 @@ const HEALTH_DAMAGE_SPEED: float = 15.0
 
 var anim_propagation: StringName = "stamina"
 
-var stamina: float:
+var stamina: float = SIGNAL_MAX_USE:
 	set(value):
 		stamina = clamp(value, 0, SIGNAL_MAX_USE)
 		anim_propagation = "emit_signal"
 		stamina_changed.emit(stamina, SIGNAL_MAX_USE)
 
-var health: float:
+var health: float = HEALTH_MAX:
 	set(value):
 		health = clamp(value, 0, HEALTH_MAX)
 		anim_propagation = "no_signal"

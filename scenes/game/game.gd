@@ -7,9 +7,6 @@ class_name Game
 @onready var audio: AudioStreamPlayer = $AudioStreamPlayer
 
 func _ready():
-	player.stamina = Player.SIGNAL_MAX_USE
-	player.health = Player.HEALTH_MAX
-
 	for death_zone in Utils.get_children_from_type(self, DeathZone):
 		if death_zone and death_zone is DeathZone:
 			death_zone.game_over.connect(_on_death_zone_game_over)

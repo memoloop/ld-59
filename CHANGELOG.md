@@ -7,6 +7,8 @@
 - In "Settings" added "FullScreenButton"
 - Added "ChargerStation" to charge the player stamina (now the stamina will not auto-refill)
 - Added "HealthBar"
+- The "DeathZone" doesn't insta-kill the player (set a value, "damage", 999.0 == insta-kill)
+- Removed "Utils.temp_out = []" (Added "internal_get_children_from_type" method in "Utils.gd" to make recursion)
 
 ## v0.1.3
 - Added a "DeathZone" node to "Wall" scene, now when the player is stuck in a wall the game is over.

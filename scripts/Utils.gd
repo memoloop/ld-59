@@ -25,13 +25,20 @@ static func get_direction_string(direction: Vector2) -> String:
 
 	return "none"
 
-static func get_children_from_type(parent: Node, type) -> Array:
+static func internal_get_children_from_type(parent: Node, type):
 	for child in parent.get_children():
 		if is_instance_of(child, type):
 			temp_out.append(child)
-		get_children_from_type(child, type)
+
+static func get_children_from_type(parent: Node, type) -> Array:
+	temp_out.clear()
+	for child in parent.get_children():
+		if is_instance_of(child, type):
+			temp_out.append(child)
+		internal_get_children_from_type(child, type)
 
 	return temp_out
+		
 
 static func get_version() -> String:
 	return ProjectSettings.get_setting("application/config/version")

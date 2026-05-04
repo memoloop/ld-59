@@ -22,7 +22,6 @@ func create_label():
 	add_child(label)
 
 func get_label() -> Label:
-	Utils.temp_out = []
 	return Utils.get_children_from_type(self, Label)[0]
 
 func get_event():

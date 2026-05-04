@@ -18,6 +18,12 @@ class_name GUI
 func _ready() -> void:
 	StateMachine.paused.connect(_on_state_machine_paused)
 
+	health_bar.value = Player.HEALTH_MAX
+	health_bar.max_value = Player.HEALTH_MAX
+
+	stamina_bar.value = Player.SIGNAL_MAX_USE
+	stamina_bar.max_value = Player.SIGNAL_MAX_USE
+
 func _on_state_machine_paused(value: bool):
 	if value: # When pause is true
 		menu.show()

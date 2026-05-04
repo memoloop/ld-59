@@ -109,6 +109,7 @@ direction = Vector2(1, 0)
 position = Vector2(175, 0)
 
 [node name="InfoLabel" type="Label" parent="FourthSection" unique_id=274605242]
+z_index = 10
 offset_left = 331.0
 offset_top = -72.0
 offset_right = 430.0
@@ -116,6 +117,15 @@ offset_bottom = -18.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 text = "Charger station to the left"
 autowrap_mode = 3
+
+[node name="ChargerInfoLabel" type="Label" parent="FourthSection" unique_id=2035674771]
+z_index = 10
+offset_left = 101.0
+offset_top = -63.0
+offset_right = 255.0
+offset_bottom = -47.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Hold E to recharge..."
 
 [node name="FifthSection" type="Node" parent="." unique_id=1270242215]
 
@@ -162,6 +172,7 @@ direction = Vector2(0, -1)
 [node name="DeathZone" type="Area2D" parent="SeventhSection" unique_id=387574373]
 position = Vector2(1248, -324)
 script = ExtResource("10_vtaks")
+damage = 20.0
 metadata/_custom_type_script = "uid://ddex005pxcfs2"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SeventhSection/DeathZone" unique_id=156058087]
@@ -175,6 +186,7 @@ scale = Vector2(1, -1)
 [node name="DeathZone2" type="Area2D" parent="SeventhSection" unique_id=1758827333]
 position = Vector2(1104, -322)
 script = ExtResource("10_vtaks")
+damage = 20.0
 metadata/_custom_type_script = "uid://ddex005pxcfs2"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SeventhSection/DeathZone2" unique_id=1401862196]
@@ -184,6 +196,7 @@ shape = SubResource("RectangleShape2D_vtaks")
 [node name="DeathZone3" type="Area2D" parent="SeventhSection" unique_id=1299427096]
 position = Vector2(1104, -322)
 script = ExtResource("10_vtaks")
+damage = 20.0
 metadata/_custom_type_script = "uid://ddex005pxcfs2"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SeventhSection/DeathZone3" unique_id=207040183]

@@ -15,5 +15,5 @@ func _on_quit_button_pressed() -> void:
 func _on_settings_button_pressed() -> void:
 	hide()
 	gui.settings.show()
-	Utils.temp_out = []
+	
 	gui.settings.selection_container.get_buttons()[0].grab_focus()

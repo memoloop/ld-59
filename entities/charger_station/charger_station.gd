@@ -8,7 +8,7 @@ func _on_body_entered(body: Node2D) -> void:
 		player = body
 
 func _process(delta: float) -> void:
-	if player:
+	if player and Input.is_action_pressed("interact"):
 		player.stamina += Player.SIGNAL_SPEED * delta
 
 func _on_body_exited(body: Node2D) -> void:
