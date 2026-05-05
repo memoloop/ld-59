@@ -13,7 +13,7 @@ func _unhandled_input(event):
 	match state:
 
 		State.PLAY:
-			if get_tree().current_scene is Node2D and event.is_action_pressed("pause"):
+			if get_tree().current_scene is Level and event.is_action_pressed("pause"):
 				get_tree().paused = true
 				paused.emit(true)
 				state = State.PAUSE

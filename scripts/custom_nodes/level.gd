@@ -1,10 +1,10 @@
-extends Node2D
-class_name Game
+extends Node
+class_name Level
 
 @export var gui: GUI
 @export var player: Player
 
-@onready var audio: AudioStreamPlayer = $AudioStreamPlayer
+@export var audio_player: AudioStreamPlayer
 
 func _ready():
 	for death_zone in Utils.get_children_from_type(self, DeathZone):
@@ -42,4 +42,4 @@ func _on_state_machine_paused(value: bool):
 # This is for the web build
 # ---------------------------
 func _on_audio_stream_player_finished():
-	audio.play()
+	audio_player.play()

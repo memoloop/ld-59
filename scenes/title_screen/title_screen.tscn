@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://up5focj42x5a" path="res://scenes/title_screen/title_screen.gd" id="1_mgrm8"]
 [ext_resource type="PackedScene" uid="uid://c5a3iuanjy3t2" path="res://entities/player/player.tscn" id="2_sa3yf"]
 [ext_resource type="PackedScene" uid="uid://du43825ca2oe4" path="res://entities/lever/lever.tscn" id="3_s4lrb"]
+[ext_resource type="PackedScene" uid="uid://cecd2kqjhtjy5" path="res://gui/mobile_layer/mobile_layer.tscn" id="5_5uxxq"]
 
 [node name="TitleScreen" type="Control" unique_id=2022016554]
 process_mode = 3
@@ -81,5 +82,7 @@ offset_right = 54.0
 offset_bottom = 191.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 text = "Move with A - D"
+
+[node name="MobileLayer" parent="." unique_id=1942162801 instance=ExtResource("5_5uxxq")]
 
 [connection signal="activate_changed" from="Lever" to="." method="_on_lever_activate_changed"]

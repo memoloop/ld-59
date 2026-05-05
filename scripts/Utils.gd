@@ -38,7 +38,6 @@ static func get_children_from_type(parent: Node, type) -> Array:
 		internal_get_children_from_type(child, type)
 
 	return temp_out
-		
 
 static func get_version() -> String:
 	return ProjectSettings.get_setting("application/config/version")
@@ -49,10 +48,10 @@ static func get_separate_words_string(string: String) -> String:
 
 	return separate_words_string
 
-static func simulate_input_pressed(action: StringName):
+static func simulate_input_pressed(action: StringName, pressed: bool = true):
 	var input_event_action := InputEventAction.new()
 	input_event_action.action = action
-	input_event_action.pressed = true
+	input_event_action.pressed = pressed
 	Input.parse_input_event(input_event_action)
 
 static func toggle_fullscreen():

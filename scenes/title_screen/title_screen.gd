@@ -10,7 +10,8 @@ func _unhandled_input(event):
 		press_E_label.show()
 
 func _on_lever_activate_changed(_value: bool):
-	get_tree().change_scene_to_file("res://scenes/game/game.tscn")
+	# Go to the first level
+	get_tree().change_scene_to_file("res://scenes/levels/level_1.tscn")
 
 func _ready():
 	version_label.text = "v" + Utils.get_version()

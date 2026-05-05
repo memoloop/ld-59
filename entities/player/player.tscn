@@ -149,9 +149,8 @@ script = ExtResource("1_abrql")
 process_mode = 3
 position = Vector2(0, -13)
 sprite_frames = SubResource("SpriteFrames_8fjmc")
-animation = &"death"
+animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.78992426
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=180195530]
 position = Vector2(0, -5)

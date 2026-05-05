@@ -9,6 +9,9 @@
 - Added "HealthBar"
 - The "DeathZone" doesn't insta-kill the player (set a value, "damage", 999.0 == insta-kill)
 - Removed "Utils.temp_out = []" (Added "internal_get_children_from_type" method in "Utils.gd" to make recursion)
+- Added "Level" class that replace the "Game"
+- Starting Level 2 development (in progress...)
+- Mobile input layer (in progress...)
 
 ## v0.1.3
 - Added a "DeathZone" node to "Wall" scene, now when the player is stuck in a wall the game is over.

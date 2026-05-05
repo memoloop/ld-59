@@ -7,7 +7,7 @@
     - Set all labels to render with the correct keys
 - Walking animation for the player (more bouncing)                  X
 - Visual clue to which receiver would open which door
-- "temp_out = []" must be removed from every script
+- "temp_out = []" must be removed from every script                 X
 
 - Mobile build...????
 
@@ -15,3 +15,4 @@
     - Health bar                                                    X
     - Stamina bar (when it finish, the health'll decrease)          X
     - Charger station (Charge stamina, not health)                  x
+    - Teleport
