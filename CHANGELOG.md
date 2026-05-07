@@ -12,6 +12,7 @@
 - Added "Level" class that replace the "Game"
 - Starting Level 2 development (in progress...)
 - Mobile input layer (in progress...)
+- New starter menu
 
 ## v0.1.3
 - Added a "DeathZone" node to "Wall" scene, now when the player is stuck in a wall the game is over.

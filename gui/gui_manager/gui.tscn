@@ -98,11 +98,12 @@ text = "PAUSE"
 visible = false
 gui = NodePath("..")
 
-[node name="Settings" parent="." unique_id=1214500497 node_paths=PackedStringArray("gui") instance=ExtResource("3_bmpfl")]
+[node name="Settings" parent="." unique_id=1214500497 node_paths=PackedStringArray("previous_menu", "input_mapper") instance=ExtResource("3_bmpfl")]
 visible = false
-gui = NodePath("..")
+previous_menu = NodePath("../Menu")
+input_mapper = NodePath("../InputMapper")
 
-[node name="InputMapper" parent="." unique_id=1751403971 node_paths=PackedStringArray("gui") instance=ExtResource("4_1iqdi")]
+[node name="InputMapper" parent="." unique_id=1751403971 node_paths=PackedStringArray("settings") instance=ExtResource("4_1iqdi")]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
@@ -115,4 +116,4 @@ offset_right = 68.0
 offset_bottom = 65.5
 grow_horizontal = 2
 grow_vertical = 2
-gui = NodePath("..")
+settings = NodePath("../Settings")

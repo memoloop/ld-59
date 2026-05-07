@@ -9,6 +9,13 @@ var state: State = State.PLAY
 func _init():
 	process_mode = Node.PROCESS_MODE_ALWAYS
 
+func _ready() -> void:
+	var save_data = SaveManager.get_save_data()
+	if not save_data or save_data.is_empty():
+		SaveManager.create_save()
+	
+	SaveManager.setup_input()
+
 func _unhandled_input(event):
 	match state:
 
@@ -24,12 +31,6 @@ func _unhandled_input(event):
 				paused.emit(false)
 				state = State.PLAY
 
-			# Simulate the custom action with the godot ui action
-			if event.is_action_pressed("move_down"):
-				Utils.simulate_input_pressed("ui_down")
-			elif event.is_action_pressed("move_up"):
-				Utils.simulate_input_pressed("ui_up")
-
 		State.GAME_OVER:
 			if event.is_action_pressed("jump"):
 				get_tree().paused = false
@@ -38,6 +39,12 @@ func _unhandled_input(event):
 	
 	if event.is_action_pressed("fullscreen") and not event.is_echo():
 		Utils.toggle_fullscreen()
+
+	# Simulate the custom action with the godot ui action
+	if event.is_action_pressed("move_down"):
+		Utils.simulate_input_pressed("ui_down")
+	elif event.is_action_pressed("move_up"):
+		Utils.simulate_input_pressed("ui_up")
 
 func _notification(what):
 	if state != State.PLAY: return
