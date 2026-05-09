@@ -13,6 +13,9 @@ func _ready():
 
 	StateMachine.paused.connect(_on_state_machine_paused)
 
+	player.stamina_changed.connect(_on_player_stamina_changed)
+	player.health_changed.connect(_on_player_health_changed)
+
 func _on_player_stamina_changed(value: float, max_value: float):
 	gui.stamina_bar.value = value
 	gui.stamina_bar.max_value = max_value

@@ -42,4 +42,3 @@ func _on_level_activate_changed(active: bool):
 		tween.tween_property(self, property_to_change, start_position_coord, 3.0)
 		await tween.finished
 		death_zone.get_collision_shape().set_deferred("disabled", false)
-

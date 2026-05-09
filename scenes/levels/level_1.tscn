@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://pywn0wl8gy1m"]
 
-[ext_resource type="Script" path="res://scripts/custom_nodes/level.gd" id="1_dnkej"]
+[ext_resource type="Script" uid="uid://b0tmipfjopt1l" path="res://scripts/custom_nodes/level.gd" id="1_dnkej"]
 [ext_resource type="TileSet" uid="uid://jwm3ifrlxp30" path="res://assets/gd_res/tile_set.tres" id="2_mm8aj"]
 [ext_resource type="PackedScene" uid="uid://c5a3iuanjy3t2" path="res://entities/player/player.tscn" id="3_wtwp4"]
 [ext_resource type="PackedScene" uid="uid://deug3nr2iodo5" path="res://gui/gui_manager/gui.tscn" id="4_iwr0g"]
@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cbj8b0fnikb83" path="res://entities/charger_station/charger_station.tscn" id="9_mkypq"]
 [ext_resource type="Script" uid="uid://ddex005pxcfs2" path="res://scripts/custom_nodes/death_zone.gd" id="10_ndtll"]
 [ext_resource type="PackedScene" uid="uid://cvuvw8yrd6o85" path="res://entities/door/door.tscn" id="11_7h2jl"]
-[ext_resource type="PackedScene" uid="uid://c83bly3kart5k" path="res://scenes/credit_screen/credit_screen.tscn" id="12_mm8aj"]
+[ext_resource type="PackedScene" uid="uid://bwt6bcxcj5yd0" path="res://scenes/levels/level_2.tscn" id="12_mm8aj"]
 [ext_resource type="AudioStream" uid="uid://ctjrw5opjjk7k" path="res://assets/musics/main-theme.ogg" id="13_7o3do"]
 [ext_resource type="PackedScene" uid="uid://cecd2kqjhtjy5" path="res://gui/mobile_layer/mobile_layer.tscn" id="14_mm8aj"]
 
@@ -262,6 +262,4 @@ parameters/looping = true
 
 [node name="MobileLayer" parent="." unique_id=1942162801 instance=ExtResource("14_mm8aj")]
 
-[connection signal="health_changed" from="Player" to="." method="_on_player_health_changed"]
-[connection signal="stamina_changed" from="Player" to="." method="_on_player_stamina_changed"]
 [connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

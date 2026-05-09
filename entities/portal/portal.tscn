@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://dhgo56yd0iifw"]
+
+[ext_resource type="Texture2D" uid="uid://qdf1qmo8i4md" path="res://assets/images/portal.png" id="1_0d7no"]
+[ext_resource type="Script" uid="uid://bg1qbgyqkoirc" path="res://entities/portal/portal.gd" id="1_uqfsl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uqfsl"]
+atlas = ExtResource("1_0d7no")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tqc7l"]
+atlas = ExtResource("1_0d7no")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lirgq"]
+atlas = ExtResource("1_0d7no")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rycen"]
+atlas = ExtResource("1_0d7no")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0i3kw"]
+atlas = ExtResource("1_0d7no")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_imjtl"]
+atlas = ExtResource("1_0d7no")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qe371"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uqfsl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tqc7l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lirgq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rycen")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0i3kw")
+}],
+"loop": true,
+"name": &"activate",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_imjtl")
+}],
+"loop": true,
+"name": &"deactivate",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_axc1i"]
+radius = 4.0
+height = 36.0
+
+[node name="Portal" type="Area2D" unique_id=803504366]
+script = ExtResource("1_uqfsl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1862999924]
+position = Vector2(32, -16)
+sprite_frames = SubResource("SpriteFrames_qe371")
+animation = &"activate"
+autoplay = "activate"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=680489909]
+position = Vector2(32, -18)
+shape = SubResource("CapsuleShape2D_axc1i")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
