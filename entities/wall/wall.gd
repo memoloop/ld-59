@@ -28,9 +28,10 @@ func _ready():
 	raised_position_coord = start_position_coord
 	raised_position_coord -= distance
 
-	signal_propagator.activate_changed.connect(_on_level_activate_changed)
+	if signal_propagator:
+		signal_propagator.activate_changed.connect(_on_lever_activate_changed)
 
-func _on_level_activate_changed(active: bool):
+func _on_lever_activate_changed(active: bool):
 	if tween:
 		tween.kill()
 	tween = create_tween()

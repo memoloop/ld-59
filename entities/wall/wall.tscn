@@ -8,6 +8,7 @@
 size = Vector2(32, 64)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xaov"]
+size = Vector2(24, 20)
 
 [node name="Wall" type="AnimatableBody2D" unique_id=26372109]
 z_index = -1
