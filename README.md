@@ -21,3 +21,8 @@ The inputs can be changed in settings
 - Code Editor: Visual Studio Code
 - Sprites: Pixelorama, LibreSprite 1.1-dev (old)
 - Musics and sfx: LMMS
+
+# About license
+This project is currently under active development.
+No license has been granted yet.
+Please do not redistribute or reuse code/assets without permission.

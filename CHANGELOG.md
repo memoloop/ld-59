@@ -1,5 +1,14 @@
 # CHANGELOG
 
+## v0.2
+- Added "Portal"
+- Completed "Level2"
+- In "MobileLayer"
+    - Deleted "mobile_layer.gd"
+    - "UpButton" changed in "JumpButton
+    - Removed "DownButton"
+    - Set "process_mode" = "always"
+
 ## v0.1.4
 - Added more animation to the player ("res://assets/images/player.png")
     - Separated the animation part from the propagation mechaninc "handle_animation"
