@@ -4,6 +4,12 @@ class_name Menu
 @onready var selection_container: SelectionContainer = $MarginContainer/SelectionContainer
 @export var gui: GUI
 
+@onready var settings_button: Button = $MarginContainer/SelectionContainer/SettingsButton
+
+func _ready():
+	if OS.has_feature("mobile"):
+		settings_button.hide()
+
 func _on_resume_button_pressed() -> void:
 	StateMachine.state = StateMachine.State.PLAY
 	get_tree().paused = false

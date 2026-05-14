@@ -3,9 +3,13 @@ class_name StarterMenu
 
 @onready var selection_container: SelectionContainer = $MarginContainer/SelectionContainer
 @export var settings: Settings
+@onready var settings_button: Button = $MarginContainer/SelectionContainer/SettingsButton
 
 func _ready() -> void:
 	selection_container.get_buttons()[0].grab_focus()
+	
+	if OS.has_feature("mobile"):
+		settings_button.hide()
 
 func _on_play_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/levels/level_1.tscn")

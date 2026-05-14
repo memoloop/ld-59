@@ -63,6 +63,7 @@ rotation = 4.712389
 scale = Vector2(-1, 1)
 
 [node name="InfoLabel" type="Label" parent="SecondSection" unique_id=482590949]
+visible = false
 z_index = 10
 offset_left = 259.0
 offset_top = 50.0
@@ -82,6 +83,7 @@ signal_propagator = NodePath("../SignalReceiver")
 position = Vector2(1216, 208)
 
 [node name="TutorialLabel" type="Label" parent="ThirdSection" unique_id=456832931]
+visible = false
 z_index = 10
 offset_left = 1026.0
 offset_top = 116.0
@@ -112,15 +114,16 @@ position = Vector2(175, 0)
 
 [node name="InfoLabel" type="Label" parent="FourthSection" unique_id=274605242]
 z_index = 10
-offset_left = 331.0
-offset_top = -72.0
-offset_right = 430.0
-offset_bottom = -18.0
+offset_left = 432.0
+offset_top = -93.0
+offset_right = 531.0
+offset_bottom = -39.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 text = "Charger station to the left"
 autowrap_mode = 3
 
 [node name="ChargerInfoLabel" type="Label" parent="FourthSection" unique_id=2035674771]
+visible = false
 z_index = 10
 offset_left = 101.0
 offset_top = -63.0
@@ -216,10 +219,10 @@ direction = Vector2(0, -1)
 
 [node name="InfoLabel" type="Label" parent="SeventhSection" unique_id=704104955]
 z_index = 10
-offset_left = 1142.0
-offset_top = -495.0
-offset_right = 1285.0
-offset_bottom = -479.0
+offset_left = 1125.0
+offset_top = -498.0
+offset_right = 1268.0
+offset_bottom = -482.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 text = "Beware the spikes!	"
 

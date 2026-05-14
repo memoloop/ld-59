@@ -8,6 +8,7 @@
     - "UpButton" changed in "JumpButton
     - Removed "DownButton"
     - Set "process_mode" = "always"
+- "SettingsButton" hidden in mobile version
 
 ## v0.1.4
 - Added more animation to the player ("res://assets/images/player.png")

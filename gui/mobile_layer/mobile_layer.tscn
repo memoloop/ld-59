@@ -42,6 +42,10 @@ region = Rect2(64, 0, 16, 16)
 atlas = ExtResource("1_48gna")
 region = Rect2(80, 0, 16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_jmjbn"]
+atlas = ExtResource("1_48gna")
+region = Rect2(96, 0, 16, 16)
+
 [node name="MobileLayer" type="CanvasLayer" unique_id=1942162801]
 process_mode = 3
 
@@ -88,4 +92,12 @@ scale = Vector2(4, 4)
 texture_normal = SubResource("AtlasTexture_jnw7h")
 texture_pressed = SubResource("AtlasTexture_wiorx")
 action = "emit_signal"
+visibility_mode = 1
+
+[node name="PauseButton" type="TouchScreenButton" parent="." unique_id=1840471665]
+modulate = Color(1, 1, 1, 0.6)
+position = Vector2(456, 16)
+scale = Vector2(2, 2)
+texture_normal = SubResource("AtlasTexture_jmjbn")
+action = "pause"
 visibility_mode = 1
