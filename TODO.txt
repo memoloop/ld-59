@@ -9,10 +9,12 @@
 - Visual clue to which receiver would open which door
 - "temp_out = []" must be removed from every script                 X
 
-- Mobile build...????
+- Mobile build
+
+- Fix volume save
 
 - New mechanics:
     - Health bar                                                    X
     - Stamina bar (when it finish, the health'll decrease)          X
-    - Charger station (Charge stamina, not health)                  x
-    - Teleport
+    - Charger station (Charge stamina, not health)                  X
+    - Teleport                                                      X

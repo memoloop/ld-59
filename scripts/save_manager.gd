@@ -3,7 +3,9 @@ class_name SaveManager
 
 const SAVE_PATH: String = "user://save.json"
 
-const TEMPLATE := {
+static var TEMPLATE := {
+	"version": Utils.get_version(),
+	"level": "res://scenes/levels/level_1.tscn",
 	"input": {
 		"move_up": "W",
 		"move_down": "S",
@@ -13,10 +15,12 @@ const TEMPLATE := {
 		"interact": "E",
 		"emit_signal": "Q"
 	},
-	"volume": 0.5
+	"volume": 0.5,
+	"fullscreen": false
 }
 
 static func create_save():
+	# Create a new save file
 	var file := FileAccess.open(SAVE_PATH, FileAccess.WRITE)
 	if file:
 		file.store_string(JSON.stringify(TEMPLATE))
@@ -59,13 +63,13 @@ static func set_input(action: StringName, event_label: String):
 		file.store_string(JSON.stringify(data))
 		file.close()
 
-static func set_volume(volume: float):
+static func set_data(key: String, value: Variant):
 	var data = get_save_data()
-	
-	if not (data is Dictionary):
+
+	if not data is Dictionary:
 		data = TEMPLATE.duplicate(true)
 
-	data["volume"] = volume
+	data[key] = value
 
 	var file := FileAccess.open(SAVE_PATH, FileAccess.WRITE)
 	if file:

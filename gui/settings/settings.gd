@@ -17,7 +17,7 @@ func _on_close_button_pressed() -> void:
 	previous_menu.selection_container.get_buttons()[0].grab_focus()
 
 	# Save the volume settings
-	SaveManager.set_volume(volume_button.volume)
+	SaveManager.set_data("volume", volume_button.volume)
 
 func _on_input_button_pressed() -> void:
 	hide()
@@ -27,3 +27,4 @@ func _on_input_button_pressed() -> void:
 func _on_fullscreen_button_pressed() -> void:
 	Utils.toggle_fullscreen()
 	fullscreen_button.text = "Fullscreen: " + ("on" if DisplayServer.window_get_mode() == Window.MODE_FULLSCREEN else "off")
+	SaveManager.set_data("fullscreen", DisplayServer.window_get_mode() == Window.MODE_FULLSCREEN)

@@ -11,10 +11,14 @@ func _init():
 
 func _ready() -> void:
 	var save_data = SaveManager.get_save_data()
-	if not save_data or save_data.is_empty():
+
+	if not save_data or save_data.is_empty() or save_data.keys() != SaveManager.TEMPLATE.keys():
 		SaveManager.create_save()
 	
 	SaveManager.setup_input()
+	AudioServer.set_bus_volume_linear(0, save_data["volume"])
+	if save_data["fullscreen"]:
+		Utils.toggle_fullscreen()
 
 func _unhandled_input(event):
 	match state:

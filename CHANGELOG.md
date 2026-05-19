@@ -1,5 +1,14 @@
 # CHANGELOG
 
+## v0.2.1
+- In "save_manager.gd"
+    - Added new keys to "TEMPLATE"
+        - Added "version"
+        - Added "level"
+        - Added "fullscreen"
+    - Deleted "set_volume" method
+    - Added "set_data" method (It has the same code of "set_volume" but for all data)
+
 ## v0.2
 - Added "Portal"
 - Completed "Level2"
