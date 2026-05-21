@@ -16,9 +16,6 @@ func _on_close_button_pressed() -> void:
 	previous_menu.show()
 	previous_menu.selection_container.get_buttons()[0].grab_focus()
 
-	# Save the volume settings
-	SaveManager.set_data("volume", volume_button.volume)
-
 func _on_input_button_pressed() -> void:
 	hide()
 	input_mapper.show()

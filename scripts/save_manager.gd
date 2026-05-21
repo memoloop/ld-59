@@ -3,9 +3,12 @@ class_name SaveManager
 
 const SAVE_PATH: String = "user://save.json"
 
+# This must be a constant, but in constant it isn't use fuction like "Utils.get_version"
+# So DON'T MODIFY IN CODE
+# Use it like a const
+# Also TEMPLATE keys must be in alphabetical order to save data
 static var TEMPLATE := {
-	"version": Utils.get_version(),
-	"level": "res://scenes/levels/level_1.tscn",
+	"fullscreen": false,
 	"input": {
 		"move_up": "W",
 		"move_down": "S",
@@ -15,8 +18,9 @@ static var TEMPLATE := {
 		"interact": "E",
 		"emit_signal": "Q"
 	},
+	"level": "res://scenes/levels/level_1.tscn",
+	"version": Utils.get_version(),
 	"volume": 0.5,
-	"fullscreen": false
 }
 
 static func create_save():

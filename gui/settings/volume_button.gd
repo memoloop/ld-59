@@ -4,7 +4,7 @@ class_name VolumeButton
 var increase: bool = false
 var decrease: bool = false
 
-@onready var volume: float = 0.5
+@onready var volume: float
 var step: float = 0.001
 
 func _ready() -> void:
@@ -13,6 +13,9 @@ func _ready() -> void:
 	var data = SaveManager.get_save_data()
 	if data is Dictionary:
 		volume = data["volume"]
+		print(volume)
+	else:
+		volume = 0.5
 	AudioServer.set_bus_volume_linear(0, volume)
 	text = "Volume < >: " + str(int(volume * 100))
 
@@ -26,6 +29,8 @@ func _on_gui_input(_event: InputEvent) -> void:
 	else:
 		increase = false
 		decrease = false
+
+		SaveManager.set_data("volume", volume)
 
 func _process(_delta: float) -> void:
 	if not increase and not decrease: return

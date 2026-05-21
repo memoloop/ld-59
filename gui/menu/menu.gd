@@ -7,7 +7,7 @@ class_name Menu
 @onready var settings_button: Button = $MarginContainer/SelectionContainer/SettingsButton
 
 func _ready():
-	if OS.has_feature("mobile"):
+	if OS.has_feature("mobile") or OS.has_feature("web_android") or OS.has_feature("web_ios"):
 		settings_button.hide()
 
 func _on_resume_button_pressed() -> void:

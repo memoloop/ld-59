@@ -9,9 +9,9 @@
 - Visual clue to which receiver would open which door
 - "temp_out = []" must be removed from every script                 X
 
-- Mobile build
+- Mobile build                                             in progress
 
-- Fix volume save
+- Fix volume save                                                   X
 
 - New mechanics:
     - Health bar                                                    X
