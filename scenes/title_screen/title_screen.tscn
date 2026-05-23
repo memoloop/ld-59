@@ -3,6 +3,7 @@
 [ext_resource type="TileSet" uid="uid://jwm3ifrlxp30" path="res://assets/gd_res/tile_set.tres" id="1_fgkus"]
 [ext_resource type="Script" uid="uid://up5focj42x5a" path="res://scenes/title_screen/title_screen.gd" id="1_mgrm8"]
 [ext_resource type="PackedScene" uid="uid://bhhci4tbdpkf4" path="res://gui/starter_menu/starter_menu.tscn" id="6_cxcmr"]
+[ext_resource type="PackedScene" uid="uid://cln4081rjsj1s" path="res://gui/starter_menu/reset_panel.tscn" id="6_j12ko"]
 [ext_resource type="PackedScene" uid="uid://mn5uekqxoimx" path="res://gui/input_mapper/input_mapper.tscn" id="6_yegqs"]
 [ext_resource type="PackedScene" uid="uid://wbj6sndgiymw" path="res://gui/settings/settings.tscn" id="8_xoykc"]
 
@@ -56,7 +57,7 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 text = "v(placeholder)"
 horizontal_alignment = 2
 
-[node name="StarterMenu" parent="." unique_id=1008898060 node_paths=PackedStringArray("settings") instance=ExtResource("6_cxcmr")]
+[node name="StarterMenu" parent="." unique_id=1008898060 node_paths=PackedStringArray("settings", "reset_panel") instance=ExtResource("6_cxcmr")]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -70,6 +71,7 @@ offset_bottom = 64.99999
 grow_horizontal = 2
 grow_vertical = 2
 settings = NodePath("../Settings")
+reset_panel = NodePath("../ResetPanel")
 metadata/_edit_use_anchors_ = true
 
 [node name="InputMapper" parent="." unique_id=1751403971 node_paths=PackedStringArray("settings") instance=ExtResource("6_yegqs")]
@@ -99,5 +101,21 @@ offset_right = 74.5
 offset_bottom = 66.0
 previous_menu = NodePath("../StarterMenu")
 input_mapper = NodePath("../InputMapper")
+
+[node name="ResetPanel" parent="." unique_id=1976184724 node_paths=PackedStringArray("starter_menu") instance=ExtResource("6_j12ko")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -118.0
+offset_top = -34.5
+offset_right = 118.0
+offset_bottom = 34.5
+grow_horizontal = 2
+grow_vertical = 2
+starter_menu = NodePath("../StarterMenu")
 
 [connection signal="visibility_changed" from="InputMapper" to="." method="_on_input_mapper_visibility_changed"]

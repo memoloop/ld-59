@@ -8,6 +8,10 @@
         - Added "fullscreen"
     - Deleted "set_volume" method
     - Added "set_data" method (It has the same code of "set_volume" but for all data)
+- Added "ResetPanel"
+- Removed "selection_container.gd"
+    - Added "vbox_selection.gd"
+    - Added "hbox_selection.gd"
 
 ## v0.2
 - Added "Portal"

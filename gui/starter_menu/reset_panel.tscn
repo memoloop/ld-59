@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://cln4081rjsj1s"]
+
+[ext_resource type="Script" uid="uid://mrengdw2kjcc" path="res://gui/starter_menu/reset_panel.gd" id="1_slejr"]
+[ext_resource type="Script" uid="uid://fetvcy6wux8n" path="res://scripts/custom_nodes/hbox_selection.gd" id="2_lpqil"]
+
+[node name="ResetPanel" type="PanelContainer" unique_id=1976184724]
+offset_right = 236.0
+offset_bottom = 69.0
+script = ExtResource("1_slejr")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=464337680]
+layout_mode = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=188946515]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1685979733]
+custom_minimum_size = Vector2(100, 10)
+layout_mode = 2
+text = "Are you sure you want to reset the save?"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="HBoxSelection" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1654350594]
+layout_mode = 2
+alignment = 1
+script = ExtResource("2_lpqil")
+
+[node name="YesButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxSelection" unique_id=1730660307]
+layout_mode = 2
+text = "Yes
+"
+
+[node name="NoButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxSelection" unique_id=1214034225]
+layout_mode = 2
+text = "No
+"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxSelection/YesButton" to="." method="_on_yes_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxSelection/NoButton" to="." method="_on_no_button_pressed"]

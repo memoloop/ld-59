@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://wbj6sndgiymw"]
 
-[ext_resource type="Script" uid="uid://bdirocy7ye5f" path="res://scripts/custom_nodes/selection_container.gd" id="1_cphfk"]
 [ext_resource type="Script" uid="uid://cygoen82vfayh" path="res://gui/settings/settings.gd" id="1_po07c"]
 [ext_resource type="Script" uid="uid://bsdhcnhfuc423" path="res://gui/settings/volume_button.gd" id="2_mq5kv"]
+[ext_resource type="Script" uid="uid://btxrxe6r2ajt8" path="res://scripts/custom_nodes/vbox_selection.gd" id="2_po07c"]
 
 [node name="Settings" type="PanelContainer" unique_id=1214500497]
 process_mode = 2
@@ -26,32 +26,31 @@ theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="SelectionContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1329718302]
+[node name="VBoxSelection" type="VBoxContainer" parent="MarginContainer" unique_id=1978510427]
 layout_mode = 2
-script = ExtResource("1_cphfk")
-metadata/_custom_type_script = "uid://bdirocy7ye5f"
+script = ExtResource("2_po07c")
 
-[node name="VolumeButton" type="Button" parent="MarginContainer/SelectionContainer" unique_id=400376912]
+[node name="VolumeButton" type="Button" parent="MarginContainer/VBoxSelection" unique_id=400376912]
 layout_mode = 2
 text = "Volume < >: value"
 script = ExtResource("2_mq5kv")
 
-[node name="InputButton" type="Button" parent="MarginContainer/SelectionContainer" unique_id=550854133]
+[node name="InputButton" type="Button" parent="MarginContainer/VBoxSelection" unique_id=550854133]
 layout_mode = 2
 text = "Input.."
 
-[node name="FullscreenButton" type="Button" parent="MarginContainer/SelectionContainer" unique_id=1772736192]
+[node name="FullscreenButton" type="Button" parent="MarginContainer/VBoxSelection" unique_id=1772736192]
 layout_mode = 2
 text = "Fullscreen: value"
 
-[node name="Control" type="Control" parent="MarginContainer/SelectionContainer" unique_id=355651790]
+[node name="Control" type="Control" parent="MarginContainer/VBoxSelection" unique_id=355651790]
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 
-[node name="CloseButton" type="Button" parent="MarginContainer/SelectionContainer" unique_id=2071680894]
+[node name="CloseButton" type="Button" parent="MarginContainer/VBoxSelection" unique_id=2071680894]
 layout_mode = 2
 text = "Close"
 
-[connection signal="pressed" from="MarginContainer/SelectionContainer/InputButton" to="." method="_on_input_button_pressed"]
-[connection signal="pressed" from="MarginContainer/SelectionContainer/FullscreenButton" to="." method="_on_fullscreen_button_pressed"]
-[connection signal="pressed" from="MarginContainer/SelectionContainer/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxSelection/InputButton" to="." method="_on_input_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxSelection/FullscreenButton" to="." method="_on_fullscreen_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxSelection/CloseButton" to="." method="_on_close_button_pressed"]

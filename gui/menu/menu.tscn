@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://7raur46wcu4g"]
 
 [ext_resource type="Script" uid="uid://vdr6dcdvfdy7" path="res://gui/menu/menu.gd" id="1_iots8"]
-[ext_resource type="Script" uid="uid://bdirocy7ye5f" path="res://scripts/custom_nodes/selection_container.gd" id="2_0n48u"]
+[ext_resource type="Script" uid="uid://btxrxe6r2ajt8" path="res://scripts/custom_nodes/vbox_selection.gd" id="2_br8st"]
 
 [node name="Menu" type="PanelContainer" unique_id=2064217305]
 process_mode = 2
@@ -25,23 +25,22 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="SelectionContainer" type="VBoxContainer" parent="MarginContainer" unique_id=2009463087]
+[node name="VBoxSelection" type="VBoxContainer" parent="MarginContainer" unique_id=995880892]
 layout_mode = 2
-script = ExtResource("2_0n48u")
-metadata/_custom_type_script = "uid://bdirocy7ye5f"
+script = ExtResource("2_br8st")
 
-[node name="ResumeButton" type="Button" parent="MarginContainer/SelectionContainer" unique_id=781265158]
+[node name="ResumeButton" type="Button" parent="MarginContainer/VBoxSelection" unique_id=781265158]
 layout_mode = 2
 text = "Resume"
 
-[node name="SettingsButton" type="Button" parent="MarginContainer/SelectionContainer" unique_id=875495875]
+[node name="SettingsButton" type="Button" parent="MarginContainer/VBoxSelection" unique_id=875495875]
 layout_mode = 2
 text = "Settings"
 
-[node name="QuitButton" type="Button" parent="MarginContainer/SelectionContainer" unique_id=1084851183]
+[node name="QuitButton" type="Button" parent="MarginContainer/VBoxSelection" unique_id=1084851183]
 layout_mode = 2
 text = "Quit"
 
-[connection signal="pressed" from="MarginContainer/SelectionContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
-[connection signal="pressed" from="MarginContainer/SelectionContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
-[connection signal="pressed" from="MarginContainer/SelectionContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxSelection/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxSelection/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxSelection/QuitButton" to="." method="_on_quit_button_pressed"]

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bhhci4tbdpkf4"]
 
-[ext_resource type="Script" uid="uid://bdirocy7ye5f" path="res://scripts/custom_nodes/selection_container.gd" id="1_f64uh"]
 [ext_resource type="Script" uid="uid://dlbrjfqowq8qq" path="res://gui/starter_menu/starter_menu.gd" id="1_vgclq"]
+[ext_resource type="Script" uid="uid://btxrxe6r2ajt8" path="res://scripts/custom_nodes/vbox_selection.gd" id="2_vgclq"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vgclq"]
 
@@ -18,24 +18,27 @@ theme_override_constants/margin_top = 2
 theme_override_constants/margin_right = 2
 theme_override_constants/margin_bottom = 2
 
-[node name="SelectionContainer" type="VBoxContainer" parent="MarginContainer" unique_id=920636161]
+[node name="VBoxSelection" type="VBoxContainer" parent="MarginContainer" unique_id=1518844187]
 layout_mode = 2
-alignment = 1
-script = ExtResource("1_f64uh")
-metadata/_custom_type_script = "uid://bdirocy7ye5f"
+script = ExtResource("2_vgclq")
 
-[node name="PlayButton" type="Button" parent="MarginContainer/SelectionContainer" unique_id=115479405]
+[node name="PlayButton" type="Button" parent="MarginContainer/VBoxSelection" unique_id=115479405]
 layout_mode = 2
 text = "PLAY"
 
-[node name="SettingsButton" type="Button" parent="MarginContainer/SelectionContainer" unique_id=946763466]
+[node name="NewGameButton" type="Button" parent="MarginContainer/VBoxSelection" unique_id=1364533866]
+layout_mode = 2
+text = "New Game"
+
+[node name="SettingsButton" type="Button" parent="MarginContainer/VBoxSelection" unique_id=946763466]
 layout_mode = 2
 text = "Settings"
 
-[node name="QuitButton" type="Button" parent="MarginContainer/SelectionContainer" unique_id=315255368]
+[node name="QuitButton" type="Button" parent="MarginContainer/VBoxSelection" unique_id=315255368]
 layout_mode = 2
 text = "Quit"
 
-[connection signal="pressed" from="MarginContainer/SelectionContainer/PlayButton" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="MarginContainer/SelectionContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
-[connection signal="pressed" from="MarginContainer/SelectionContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxSelection/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxSelection/NewGameButton" to="." method="_on_new_game_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxSelection/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxSelection/QuitButton" to="." method="_on_quit_button_pressed"]

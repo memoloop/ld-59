@@ -13,7 +13,6 @@ func _ready() -> void:
 	var data = SaveManager.get_save_data()
 	if data is Dictionary:
 		volume = data["volume"]
-		print(volume)
 	else:
 		volume = 0.5
 	AudioServer.set_bus_volume_linear(0, volume)

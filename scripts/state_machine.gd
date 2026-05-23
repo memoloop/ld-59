@@ -12,9 +12,6 @@ func _init():
 func _ready() -> void:
 	var save_data = SaveManager.get_save_data()
 
-	print(save_data.keys())
-	print(SaveManager.TEMPLATE.keys())
-
 	if not save_data or save_data.is_empty() or save_data.keys() != SaveManager.TEMPLATE.keys():
 		SaveManager.create_save()
 	

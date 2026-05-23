@@ -39,7 +39,7 @@ func _on_state_machine_paused(value: bool):
 	gui.pause_label.visible = value
 	gui.menu.visible = value
 	if value: 
-		gui.menu.selection_container.get_buttons()[0].grab_focus()
+		gui.menu.vbox_selection.get_buttons()[0].grab_focus()
 
 # ---------------------------
 # This is for the web build
