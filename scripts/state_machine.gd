@@ -14,6 +14,7 @@ func _ready() -> void:
 
 	if not save_data or save_data.is_empty() or save_data.keys() != SaveManager.TEMPLATE.keys():
 		SaveManager.create_save()
+		save_data = SaveManager.get_save_data()
 	
 	SaveManager.setup_input()
 	AudioServer.set_bus_volume_linear(0, save_data["volume"])
@@ -36,10 +37,16 @@ func _unhandled_input(event):
 				state = State.PLAY
 
 		State.GAME_OVER:
-			if event.is_action_pressed("jump"):
-				get_tree().paused = false
-				state = State.PLAY
-				get_tree().reload_current_scene()
+			if OS.has_feature("mobile") or OS.has_feature("web_android") or OS.has_feature("web_ios"):
+				if event is InputEventScreenTouch:
+					get_tree().paused = false
+					state = State.PLAY
+					get_tree().reload_current_scene()
+			else:
+				if event.is_action_pressed("jump"):
+					get_tree().paused = false
+					state = State.PLAY
+					get_tree().reload_current_scene()
 	
 	if event.is_action_pressed("fullscreen") and not event.is_echo():
 		Utils.toggle_fullscreen()

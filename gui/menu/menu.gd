@@ -15,11 +15,11 @@ func _on_resume_button_pressed() -> void:
 	get_tree().paused = false
 	StateMachine.paused.emit(false)
 
-func _on_quit_button_pressed() -> void:
-	get_tree().quit()
-
 func _on_settings_button_pressed() -> void:
 	hide()
 	gui.settings.show()
 	
 	gui.settings.vbox_selection.get_buttons()[0].grab_focus()
+
+func _on_return_to_title_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/title_screen/title_screen.tscn")

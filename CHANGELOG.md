@@ -12,6 +12,10 @@
 - Removed "selection_container.gd"
     - Added "vbox_selection.gd"
     - Added "hbox_selection.gd"
+- In "StarterMenu"
+    - Added "GameNewButton"
+    - "PlayButton" starts the level where you saved
+- In "Menu" replaced "QuitButton" with "ReturnToTitleButton"
 
 ## v0.2
 - Added "Portal"

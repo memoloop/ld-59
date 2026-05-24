@@ -10,7 +10,9 @@
 - Mobile build                                             in progress
 
 - Fix volume save                                                   X
-- Start the level where you saved
+- Start the level where you saved                                   X
+- Return to menu button                                             X
+- Fix get_tree().paused bug when you go in menu from game
 
 - New mechanics:
     - Health bar                                                    X

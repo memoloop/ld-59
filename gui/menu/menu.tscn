@@ -24,6 +24,10 @@ script = ExtResource("1_iots8")
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
 
 [node name="VBoxSelection" type="VBoxContainer" parent="MarginContainer" unique_id=995880892]
 layout_mode = 2
@@ -37,10 +41,10 @@ text = "Resume"
 layout_mode = 2
 text = "Settings"
 
-[node name="QuitButton" type="Button" parent="MarginContainer/VBoxSelection" unique_id=1084851183]
+[node name="ReturnToTitleButton" type="Button" parent="MarginContainer/VBoxSelection" unique_id=1084851183]
 layout_mode = 2
-text = "Quit"
+text = "Return to title"
 
 [connection signal="pressed" from="MarginContainer/VBoxSelection/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxSelection/SettingsButton" to="." method="_on_settings_button_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxSelection/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxSelection/ReturnToTitleButton" to="." method="_on_return_to_title_button_pressed"]
