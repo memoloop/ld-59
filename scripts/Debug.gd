@@ -2,6 +2,8 @@ extends Node
 # Autoload
 
 func _ready() -> void:
+	process_mode = Node.PROCESS_MODE_ALWAYS
+
 	# If the version is in development, mute all audio
 	# I like listening music when I code...
 	if Utils.get_version().contains("-dev"):
@@ -12,3 +14,6 @@ func _unhandled_key_input(event: InputEvent) -> void:
 		if event.pressed:
 			if event.keycode == KEY_M:
 				AudioServer.set_bus_mute(0, not AudioServer.is_bus_mute(0))
+			
+			if event.keycode == KEY_N:
+				print(StateMachine.state)

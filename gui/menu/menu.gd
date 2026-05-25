@@ -22,4 +22,6 @@ func _on_settings_button_pressed() -> void:
 	gui.settings.vbox_selection.get_buttons()[0].grab_focus()
 
 func _on_return_to_title_button_pressed() -> void:
+	StateMachine.state = StateMachine.State.PLAY
+	get_tree().paused = false
 	get_tree().change_scene_to_file("res://scenes/title_screen/title_screen.tscn")

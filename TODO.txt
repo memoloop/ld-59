@@ -12,7 +12,7 @@
 - Fix volume save                                                   X
 - Start the level where you saved                                   X
 - Return to menu button                                             X
-- Fix get_tree().paused bug when you go in menu from game
+- Fix get_tree().paused bug when you go in menu from game           X
 
 - New mechanics:
     - Health bar                                                    X

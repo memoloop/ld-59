@@ -6,6 +6,7 @@ class_name ResetPanel
 
 func _on_yes_button_pressed() -> void:
 	SaveManager.create_save()
+	StateMachine.state = StateMachine.State.PLAY
 	get_tree().change_scene_to_file(SaveManager.get_save_data()["level"])
 
 func _on_no_button_pressed() -> void:
