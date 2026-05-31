@@ -20,18 +20,18 @@ func _ready():
 	match movement:
 		Movement.HORIZONTAL:
 			start_position_coord = global_position.x
-			property_to_change = "position:x"
+			property_to_change = "global_position:x"
 		Movement.VERTICAL:
 			start_position_coord = global_position.y
-			property_to_change = "position:y"
+			property_to_change = "global_position:y"
 
 	raised_position_coord = start_position_coord
 	raised_position_coord -= distance
 
 	if signal_propagator:
-		signal_propagator.activate_changed.connect(_on_lever_activate_changed)
+		signal_propagator.activate_changed.connect(_on_signal_propagator_activate_changed)
 
-func _on_lever_activate_changed(active: bool):
+func _on_signal_propagator_activate_changed(active: bool):
 	if tween:
 		tween.kill()
 	tween = create_tween()
